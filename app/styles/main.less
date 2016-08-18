@@ -1,0 +1,111 @@
+@import "bootstrap/less/bootstrap.less";
+@import "font-awesome/less/font-awesome.less";
+@icon-font-path: "../bower_components/bootstrap/fonts/";
+@fa-font-path: "../bower_components/font-awesome/fonts/";
+
+@font-face {
+    font-family: Digital;
+    // src: 'styles/fonts/digital-7.ttf';
+    src: url(/styles/fonts/digital-7.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+  padding: 0;
+  * {border-radius: 0px !important;}
+}
+
+#calculations {
+    font-family: Digital, monospace;
+    font-size: 2em;
+    color: #FFFFFF;
+    background-color: #333333;
+    max-height: 40vh;
+    height: 40vh;
+    overflow: auto;
+    padding: 0px 20px 5px 30px;
+    h1{
+        margin: 0;
+        border-bottom: 1px solid #505050;
+    }
+    .calc-logs{
+        border-bottom: 1px solid #505050;
+        padding: 7px 10px 3px;
+    }
+    hr {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-top: 1px solid #505050;
+    }
+    .blink{
+        animation:blinker 1s linear infinite;
+        -moz-animation:blinker 1s linear infinite; /* Firefox */
+        -webkit-animation:blinker 1s linear infinite; /* Safari and Chrome */
+        -o-animation:blinker 1s linear infinite; /* Opera */
+    }
+    #nextEqu{
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        border-top: 1px solid @goat-blue;
+        // background-color: green;
+    }
+    #anchor{
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        // background-color: red;
+    }
+    div.current-array,
+    div.previous-array{
+        padding: 0 4px;
+        display: inline-block;
+        float: right;
+        span.val{  }
+    }
+}
+
+@goat-blue: #19B1EF;
+input#calcField{
+    height: 40px;
+    font-size: 2em;
+    font-family: Digital, monospace;
+    padding: 0 5px;
+    border: 1px solid @goat-blue;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+
+@keyframes blinker
+{
+0%,100%   {opacity: 0;}
+50%  {opacity: 1;}
+}
+
+@-moz-keyframes blinker /* Firefox */
+{
+0%,100%   {opacity: 0;}
+50%  {opacity: 1;}
+}
+
+@-webkit-keyframes blinker /* Safari and Chrome */
+{
+0%,100%   {opacity: 0;}
+50%  {opacity: 1;}
+}
+
+@-o-keyframes blinker /* Opera */
+{
+0%,100%   {opacity: 0;}
+50%  {opacity: 1;}
+}

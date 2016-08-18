@@ -1,0 +1,60 @@
+<div id="calculations">
+        <div class="row">
+            <h1>Equation Log<span class="blink">_</span></h1>
+            <div class="col-xs-12 calc-logs" ng-repeat="calc in calcLogs">
+                <div ng-repeat="prevEntry in calc | reverse track by $index" class="previous-array" >
+                    <span class="val" ng-class="{boobs:$first &amp;&amp; prevEntry===80085, sboob:$first &amp;&amp; prevEntry===58008}">{{prevEntry}}</span>
+                </div>
+            </div>
+            <div id="nextEqu" class="col-xs-12" class="pull-right">
+                <div ng-show="calcField" class="pull-right">{{calcField}}</div> &nbsp;
+                <div ng-repeat="entrylog in currentEqu | reverse track by $index" class="current-array">
+                    {{entrylog}}
+                </div>
+                <!-- <span class="pull-left blink">_</span> -->
+            </div>
+        </div>
+        <h4 class="text-right">Current Equation<span class="blink">_</span></h4>
+        <div id="anchor" class="row">&nbsp;</div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <div class="form-group">
+            <label class="">Input</label>
+            <input id="calcField" type="number" ng-model="calcField" ng-keypress="nextEntry($event, calcField)" class="form-control" id="calcField" placeholder="">
+            <span class="help-block col-xs-12"><small>Accepts + - * / = <i class="fa fa-share fa-rotate-180" aria-hidden="true"></i> and numerals</small></span>
+        </div>
+    </div>
+    <div class="col-xs-6 col-xs-offset-3">
+        <div class="btn-group btn-group-justified" role="group">
+            <a type="button" ng-disabled="false" class="btn btn-danger" ng-click="clearAll()">C/E</a>
+            <a type="button" ng-disabled="false" class="btn btn-warning" ng-click="clearEqu()">C</a>
+            <a type="button" ng-disabled="false" class="btn btn-default" ng-click="negativeToggle()">&#177;</a>
+            <!-- <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">/</a> -->
+        </div>
+        <span class="help-block col-xs-12"><small>G.O.A.T. Tip: Hold Shift and press '-' to toggle negatives</small></span>
+        <!-- <div class="btn-group btn-group-justified" role="group">
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">7</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">8</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">9</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">*</a>
+        </div>
+        <div class="btn-group btn-group-justified" role="group">
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">4</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">5</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">6</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">-</a>
+        </div>
+        <div class="btn-group btn-group-justified" role="group">
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">1</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">2</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">3</a>
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">+</a>
+        </div>
+        <div class="btn-group btn-group-justified" role="group">
+            <a type="button" ng-disabled="true" class="btn btn-default" ng-click="">0</a>
+            <a type="button" ng-disabled="true" class="btn btn-success" ng-click="">=</a>
+        </div> -->
+    </div>
+</div>
