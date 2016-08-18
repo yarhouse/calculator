@@ -42,17 +42,17 @@ angular.module('calculatorApp')
         } else if (_.contains(opKeyCodes, $event.keyCode) && angular.isNumber(data) ) {
             $event.preventDefault();
             _clearCalcField();
-            _checkAndSetNext($event.key, data);
+            _checkAndSetNext(String.fromCharCode($event.which), data);
 
 
         // User continues with from last equation with operator
         } else if (_.contains(opKeyCodes, $event.keyCode) && !angular.isNumber(data) && angular.isNumber(lastAnswer)) {
             $event.preventDefault();
             _clearCalcField();
-            _checkAndSetNext($event.key, lastAnswer);
+            _checkAndSetNext(String.fromCharCode($event.which), lastAnswer);
 
         // if the event key is a not number or allowed keyCode
-        } else if (!angular.isNumber(parseInt($event.key))) {
+        } else if (!angular.isNumber(parseInt(String.fromCharCode($event.which)))) {
             $event.preventDefault();
         }
 
